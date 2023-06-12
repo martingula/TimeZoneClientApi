@@ -1,0 +1,48 @@
+{
+  "name": "time-zone-client",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint && npm run lint-scss",
+    "lint-ts": "ng lint",
+    "lint-scss": "npx stylelint \"src/styles.scss\" && npx stylelint \"src/app/**/*.scss\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.0.4",
+    "@angular/common": "^16.0.4",
+    "@angular/compiler": "^16.0.4",
+    "@angular/core": "^16.0.4",
+    "@angular/forms": "^16.0.4",
+    "@angular/platform-browser": "^16.0.4",
+    "@angular/platform-browser-dynamic": "^16.0.4",
+    "@angular/router": "^16.0.4",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "primeicons": "^6.0.1",
+    "primeng": "^16.0.0-rc.2",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.5.2",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.4",
+    "@angular/cli": "~16.0.4",
+    "@angular/compiler-cli": "^16.0.4",
+    "@types/date-fns": "^2.6.0",
+    "@types/jasmine": "~4.3.2",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "typescript": "~5.0.4"
+  }
+}

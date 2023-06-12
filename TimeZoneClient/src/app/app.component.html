@@ -1,0 +1,99 @@
+<div id="app-container">
+  <h1>{{ title }}</h1>
+  <div class="timezone-info">
+    <p>Local timezone name: <strong>{{ this.timezoneName }}</strong></p>
+    <p>Local timezone offset: <strong>{{ this.offset }}</strong></p>
+  </div>
+  <hr>
+  <h2>Pick Date and Time</h2>
+  <p><p-calendar
+    (onSelect)="this.dateSelect($event)"
+    [showIcon]="true"
+    dateFormat="dd/mm/yy"
+    hourFormat="12"
+    [showTime]="true"
+    [showSeconds]="true"
+  ></p-calendar></p>
+  <hr>
+  <p>Picked Date: <strong>{{ calendarLocalDate | date : appEnv.dateFormat }}</strong></p>
+  <p>UTC Date: <strong>{{ calendarLocalToUtcDate | date : appEnv.dateFormat }}</strong></p>
+  <hr>
+  <p>Iso String: <strong>{{ dateAsIsoString }}</strong></p>
+  <p>UTC String: <strong>{{ dateAsUtcString }}</strong></p>
+  <p>Local String: <strong>{{ dateAsLocalString }}</strong></p>
+  <p>Date String: <strong>{{ dateAsDateString }}</strong></p>
+
+  <hr>
+  <h2>Date Pipe Default Formatting</h2>
+  <p>Iso String: <strong>{{ dateAsIsoString |  date }}</strong></p>
+
+  <hr>
+  <h2>New Project</h2>
+  <div class="form-container-addproject">
+    <div class="form-row">
+      <div>
+        Project Id:
+      </div>
+      <div>
+        <input class="project-id" type="text" [(ngModel)]="projectId">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        Project Name:
+      </div>
+      <div>
+        <input class="project-name" type="text" [(ngModel)]="projectName">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        Start Date
+      </div>
+      <div>
+        <p-calendar
+          [(ngModel)]="projectStartDate"
+          [showIcon]="true"
+          dateFormat="dd/mm/yy"
+          hourFormat="12"
+          [showTime]="true"
+          [showSeconds]="true"
+        ></p-calendar>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        &nbsp;
+      </div>
+      <div>
+        <button type="submit" (click)="saveProject()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <h2>Display Project List From Api</h2>
+  <p>Fetch data: <button type="submit" (click)="getAllProjects()">Get Projects</button></p>
+
+  <div class="project-list"  *ngIf="(projects$ | async) as projects">
+    <p>Project Count: <strong>{{ projects.length }}</strong></p>
+
+    <div class="form-container-projectlist">
+      <div class="form-row header">
+        <div>Id</div>
+        <div>Name</div>
+        <div>Start Date API</div>
+        <div>Start Date Pipe</div>
+      </div>
+      <ng-template ngFor [ngForOf]="projects$ | async" let-project let-i="index">
+        <div class="form-row">
+          <div>{{ project.id }}</div>
+          <div>{{ project.name }}</div>
+          <div>{{ project.startDate }}</div>
+          <div>{{ project.startDate | date }}</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+</div>

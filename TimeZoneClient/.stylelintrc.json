@@ -1,0 +1,32 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "no-empty-source": null,
+    "color-hex-length": null,
+    "custom-property-empty-line-before": null,
+    "custom-property-pattern": ["^([a-zA-Z0-9-])*$", { "message": "Expected to be alphanumeric text with dash" }],
+    "unit-allowed-list": ["rem", "px", "vw", "vh", "%", "s"],
+    "selector-class-pattern": [
+      "^([a-zA-Z0-9-])*$",
+      {
+        "message": "Expected id selector to be alphanumeric text with dash"
+      }
+    ],
+    "selector-id-pattern": [
+      "^([a-zA-Z0-9-#])*$",
+      {
+        "message": "Expected id selector to be alphanumeric text with dash"
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless"],
+        "ignore": ["after-comment", "first-nested"],
+        "severity": "warning"
+      }
+    ],
+    "declaration-empty-line-before": null,
+    "no-descending-specificity": null
+  }
+}

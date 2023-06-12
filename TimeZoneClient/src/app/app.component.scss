@@ -1,0 +1,101 @@
+#app-container {
+  h1, h2, p {
+    margin: 5px;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .timezone-info {
+    font-size: 1.25rem;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+
+  input {
+    min-height: 33px;
+    padding: 3px;
+  }
+
+  button {
+    background-color: orange;
+    border: solid 1px lightsalmon;
+    padding: 5px 15px;
+  }
+
+  .form-container-addproject {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .form-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        min-width: 100px;
+        padding: 5px;
+      }
+
+      div:first-child {
+        width: 100px;
+      }
+
+      .project-id {
+        width: 30px;
+      }
+
+      .project-name {
+        width: 150px;
+      }
+    }
+
+  }
+
+  .form-container-projectlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .form-row.header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        font-weight: 600;
+        font-size: 1.1rem;
+        background-color: lightgray;
+        width: 200px;
+
+        &:first-child {
+          width: 50px;
+        }
+      }
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        width: 200px;
+
+        &:first-child {
+          width: 50px;
+        }
+      }
+    }
+  }
+
+}
