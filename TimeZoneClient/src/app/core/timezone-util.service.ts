@@ -17,7 +17,7 @@ export class TimezoneUtilService {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
-  getTimeZoneOffset() {
+  getTimeZoneOffset(): number {
     let utcDate = new Date(
       this.date.toLocaleString('en-US', { timeZone: 'UTC' })
     );

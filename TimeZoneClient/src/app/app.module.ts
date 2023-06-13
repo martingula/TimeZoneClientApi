@@ -1,16 +1,20 @@
 import {NgModule} from '@angular/core';
+
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
-import {DATE_PIPE_DEFAULT_OPTIONS} from "@angular/common";
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+import {DATE_PIPE_DEFAULT_OPTIONS} from "@angular/common";
 
 // Import PrimeNG modules
 import {CalendarModule} from 'primeng/calendar';
-import {AppComponent} from './app.component';
-import {UtcToLocalTimePipe} from './core/pipes/utc-local-date.pipe';
+
 import {TimezoneUtilService} from './core/timezone-util.service';
+
+import {AppComponent} from './app.component';
+import {AppDatePipe} from "./core/pipes/app-date.pipe";
 
 import { environment } from 'src/environments/environment';
 
@@ -24,7 +28,7 @@ import { environment } from 'src/environments/environment';
     CalendarModule,
     RouterModule.forRoot([{path: '', component: AppComponent}]),
   ],
-  declarations: [AppComponent, UtcToLocalTimePipe],
+  declarations: [AppComponent, AppDatePipe],
   bootstrap: [AppComponent],
   providers: [TimezoneUtilService,
     {

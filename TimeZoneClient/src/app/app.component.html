@@ -17,6 +17,9 @@
   <hr>
   <p>Picked Date: <strong>{{ calendarLocalDate | date : appEnv.dateFormat }}</strong></p>
   <p>UTC Date: <strong>{{ calendarLocalToUtcDate | date : appEnv.dateFormat }}</strong></p>
+  <p>Picked Date With Abbreviation: <strong>{{ calendarLocalDate | appDatePipe }}</strong></p>
+  <p>Picked Date With Abbreviation And Format:
+    <strong>{{ calendarLocalDate | appDatePipe : 'dd/MM/yyyy hh:mm' }}</strong></p>
   <hr>
   <p>Iso String: <strong>{{ dateAsIsoString }}</strong></p>
   <p>UTC String: <strong>{{ dateAsUtcString }}</strong></p>
